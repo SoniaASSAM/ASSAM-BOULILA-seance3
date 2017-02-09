@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class Seance3 
 {
 	
+	public static final int MIN_DICE = 2;
+	
+	public static final int MAX_DICE = 12;
+	
 	public static void exo51()
 	{
 		System.out.println("Exercice 5.1");
@@ -42,6 +46,28 @@ public class Seance3
 	}
 	
 	
+	public static void exo53()
+	{
+		System.out.println("exercice5.3");
+		
+		for (int i=MIN_DICE; i<= MAX_DICE; i++)
+		{
+			StatCalc sc = null;
+			
+			for (int j=0;j<10000;j++)
+			{
+				if (sc==null) sc= new StatCalc(countRolls(i));
+				else sc.enter(countRolls(i));
+			}
+			
+			System.out.printf("sum", i);
+	        System.out.printf("mean", sc.getMean());
+	        System.out.printf("standard deviation", sc.getStandardDeviation());
+	        System.out.printf("max", sc.getMax());
+	        System.out.println("-------------------------------------");
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 		System.out.println("Seance 3");
@@ -49,6 +75,8 @@ public class Seance3
 		//exo51();
 		// executer exo52
 		exo52();
+		
+		exo53();
 		
 	}
 	

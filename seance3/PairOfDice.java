@@ -33,4 +33,24 @@ public class PairOfDice
 	{
 		return die2;
 	}
+	
+	public int getSumDice()
+	{
+		return die1 + die2;
+	}
+	
+	
+	public static int countRolls(int n)
+	{
+		PairOfDice pair = new PaireOfDice();
+		cpt = 1;
+		
+		while(pair.getSumDice() != n)
+		{
+			cpt++;
+			pair.rollDice();
+		}
+		
+		return cpt;
+	}
 }

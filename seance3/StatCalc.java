@@ -27,10 +27,11 @@ public class StatCalc {
     {
     	count = 1;
     	sum = n;
-    	squareSum = Math.sqrt(n);
+    	squareSum = n*n;
     	max = n;
     	min = n;
     }
+    
     
     
     public void enter(double num) 
